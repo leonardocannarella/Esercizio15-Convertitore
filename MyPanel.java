@@ -41,14 +41,14 @@ public class MyPanel extends JPanel implements ActionListener
     {
         if (e.getSource()== btnEUR_DOL)
         {
-            double x = Double.parseDouble(txtDenaro.getText());
-            double ris = convertitore.convertiEUR_DOL(x);
+            convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
+            double ris = convertitore.convertiEUR_DOL();
             lblRisultato.setText("Dollari convertiti: $" + ris);
         }
          else
         {
-            double x = Double.parseDouble(txtDenaro.getText());
-            double ris = convertitore.convertiDOL_EUR(x);
+            convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
+            double ris = convertitore.convertiDOL_EUR();
             lblRisultato.setText("Euro convertiti: €" + ris);
         }
     }

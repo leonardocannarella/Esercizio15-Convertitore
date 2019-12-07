@@ -14,24 +14,24 @@ public class Convertitore
         setDenaro(0);
     }
     
-    private void setDenaro(double d)
+    public void setDenaro(double d)
     {
         denaro=d;
     }
     
     //Euro in Dollaro
-    public double convertiEUR_DOL(double soldi)
+    public double convertiEUR_DOL()
     {
         double conversione;
-        conversione=soldi*1.11;
+        conversione=denaro*1.11;
         return conversione;
     }
     
     //Dollaro in Euro
-    public double convertiDOL_EUR(double soldi)
+    public double convertiDOL_EUR()
     {
         double conversione;
-        conversione=soldi*0.9;
+        conversione=denaro*0.9;
         return conversione;
     }
 }
