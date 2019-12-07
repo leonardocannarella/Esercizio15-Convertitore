@@ -41,15 +41,29 @@ public class MyPanel extends JPanel implements ActionListener
     {
         if (e.getSource()== btnEUR_DOL)
         {
-            convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
-            double ris = convertitore.convertiEUR_DOL();
-            lblRisultato.setText("Dollari convertiti: $" + ris);
+            try
+            {
+                convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
+                double ris = convertitore.convertiEUR_DOL();
+                lblRisultato.setText("Dollari convertiti: $" + ris);
+            }
+            catch(NumberFormatException exception)
+            {
+                JOptionPane.showMessageDialog(new JFrame(), "Hai inserito un numero non valido!", "Errore!", JOptionPane.ERROR_MESSAGE);
+            }
         }
          else
         {
-            convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
-            double ris = convertitore.convertiDOL_EUR();
-            lblRisultato.setText("Euro convertiti: €" + ris);
+            try
+            {
+                convertitore.setDenaro(Double.parseDouble(txtDenaro.getText()));
+                double ris = convertitore.convertiDOL_EUR();
+                lblRisultato.setText("Euro convertiti: €" + ris);
+            }
+            catch(NumberFormatException exception)
+            {
+                JOptionPane.showMessageDialog(new JFrame(), "Hai inserito un numero non valido!", "Errore!", JOptionPane.ERROR_MESSAGE);
+            }
         }
     }
 }
